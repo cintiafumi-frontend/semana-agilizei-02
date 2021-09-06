@@ -2,6 +2,11 @@
 
 context('Purchase', () => {
   it('should purchase a product', () => {
+    cy.setCookie(
+      'PrestaShop-a30a9934ef476d11b6cc3c983616e364',
+      '4UuVr9Uthq9JVegYBFrqV6ZOuzPrDaj4jI32LsB%2FR7YV0WC5xCqFhC8DtRks17wvHoiCHH%2BYiJItLL%2FwZ%2FJUENQCMvN1PiWNVjipU7WAhP4Wrr3i%2BGPdQoKDdGfBieiIENJ1SfimgRzORcDF3OP5AW7gVNrF4os7XSrM4o0VIvhCjnrvvphzH9SBrWA12fFTnuNWYSL5OoRFktc7ZF0Rr2iJBbb40kPQ2BoUfpA6LoLFINBQzStZNQ8SEoBlcKNALumglTFUhriJUNZstm5tKL%2B4mCx%2BQU6bNBNOJ%2Fs7kqMM3%2Fsh2QPxlXviL7WjIbRVOMTistCYHnxbAgj3km3D9xj3exQpBQE4FGGHDN5qjibJbH1V%2FPYvHjePy0f6h3Y2Ly%2Ff2IzhDTfbwSKL7BneRQt2rZ1kzmO5i3sjnpSiEwd%2Fy79EZ7Iu34uc%2BSX%2BcgT0000329'
+    );
+
     cy.visit('/');
 
     const productName = 'Faded Short Sleeve T-shirts';
@@ -28,10 +33,10 @@ context('Purchase', () => {
 
     cy.get('.cart_navigation a[href$="order&step=1"]').click();
 
-    cy.get('#email').type('semana-agilizei@mail.com');
-    cy.get('#passwd').type('12345');
+    // cy.get('#email').type('semana-agilizei@mail.com');
+    // cy.get('#passwd').type('12345');
 
-    cy.get('button#SubmitLogin').click();
+    // cy.get('button#SubmitLogin').click();
 
     cy.get('[type=checkbox]#addressesAreEquals').should(
       'have.attr',
